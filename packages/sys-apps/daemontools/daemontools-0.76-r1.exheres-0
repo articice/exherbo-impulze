@@ -31,6 +31,10 @@ DEFAULT_SRC_PREPARE_PATCHES+=(
 
 DEFAULT_SRC_INSTALL_EXTRA_SUBDIRS+=( src )
 
+pkg_setup() {
+exdirectory --allow /service/
+}
+
 src_compile() {
     edo echo >src/rts.tests
     edo package/compile
